@@ -1,11 +1,14 @@
-<h1>Create a new task</h1>
+<h1 class="title">Create a new task</h1>
 
-<%= form_for(@task) do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
-  <%= f.label :details %>
-  <%= f.text_field :details %>
-  <%= check_box_tag(:completed) %>
-  <%= label_tag(:completed, "done?") %>
-  <%= f.submit %>
-<% end %>
+<div class="container">
+  <%= simple_form_for @task do |f| %>
+    <%= f.input :title %>
+    <%= f.input :details %>
+    <%= f.input :completed, as: :boolean, wrapper_html: { class: 'input-checkbox' } %>
+    <%= f.submit %>
+  <% end %>
+
+  <%= link_to "back", tasks_path %>
+
+
+</div>

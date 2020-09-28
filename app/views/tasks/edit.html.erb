@@ -1,11 +1,20 @@
-<h1>Edit a task</h1>
+<h1 class="title">Edit a task</h1>
 
-<%= form_for(@task) do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
-  <%= f.label :details %>
-  <%= f.text_field :details %>
-  <%= check_box_tag(:completed) %>
-  <%= label_tag(:completed, "done?") %>
-  <%= f.submit %>
-<% end %>
+<div class="container">
+  <div class="form-group">
+    <%= simple_form_for @task do |f| %>
+      <%= f.input :title %>
+      <%= f.input :details %>
+      <%= f.input :completed, as: :boolean do%>
+          <%= f.check_box :completed, {}, "true", "false"%>
+          <% end %>
+      <%= f.submit %>
+
+    <% end %>
+  </div>
+
+
+  <%= link_to "🔙", tasks_path %>
+
+
+</div>

@@ -1,9 +1,24 @@
+<div>
+  <h1 class="title"> <%= @task.title%><%=@task.completed.to_b ? ' ✓' : '☐'%></h1>
 
-<h1> <%= @task.title %></h1>
+</div>
 
-<%= link_to "Edit this task", edit_task_path(@task) %>
+<div class="container">
 
-<%= link_to "Delete #{@task.title}",
-            task_path(@task),
-            method: :delete,
-            data: { confirm: "Are you sure?" } %>
+  <ul>
+    <li class="font-weight-light ">
+        <%= @task.details %>
+        <%=  %></li>
+  </ul>
+
+
+  <div class="link_page" text-align>
+    <%= link_to "📝", edit_task_path(@task) %>
+    <%= link_to "🗑️",
+                task_path(@task),
+                method: :delete,
+                data: { confirm: "Are you sure?" } %>
+    <%= link_to "🔙", tasks_path %>
+  </div>
+
+</div>

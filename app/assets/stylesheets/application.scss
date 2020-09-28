@@ -1,3 +1,4 @@
+@import "bootstrap/scss/bootstrap";
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -13,3 +14,22 @@
  *= require_tree .
  *= require_self
  */
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  padding: 5px;
+  font-size: 20px;
+  color: lightslategrey;
+}
+a:hover {
+    color: #696565;
+    text-decoration: none;
+}
+.title {
+  padding: 25px;
+  color: lightslategrey;
+
+}
